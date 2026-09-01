@@ -1,0 +1,445 @@
+export interface ExperienceItem {
+  id: string;
+  role: string;
+  company: string;
+  location: string;
+  period: string;
+  type: 'Full-time' | 'Contract' | 'Freelance' | 'Internship' | 'Part-time';
+  description: string[];
+  skills: string[];
+  featured?: boolean;
+}
+
+export interface ProjectItem {
+  id: string;
+  title: string;
+  tagline: string;
+  description: string;
+  category: 'Full Stack' | 'IoT & Embedded' | 'AI & Automation' | 'Web Apps';
+  image: string;
+  technologies: string[];
+  metrics?: string;
+  githubUrl?: string;
+  liveUrl?: string;
+  featured?: boolean;
+  highlights: string[];
+}
+
+export interface CertificationItem {
+  id: string;
+  title: string;
+  issuer: string;
+  date: string;
+  description?: string;
+  badge?: string;
+}
+
+export interface EducationItem {
+  institution: string;
+  degree: string;
+  period: string;
+  location: string;
+}
+
+export interface AIContentItem {
+  id: string;
+  title: string;
+  category: 'Image Generation' | 'Prompt Engineering' | 'AI Copywriting' | 'Multimodal & Video';
+  tool: string;
+  description: string;
+  prompt: string;
+  aspectRatio?: string;
+  image?: string;
+  videoUrl?: string;
+  tags: string[];
+  outputSample?: string;
+  parameters?: {
+    model: string;
+    cfgScale?: number;
+    steps?: number;
+    temperature?: number;
+  };
+}
+
+export interface SkillCategory {
+  name: string;
+  icon: string;
+  skills: { name: string; level: number; highlight?: boolean }[];
+}
+
+export const personalInfo = {
+  name: "Jayson Justin C. Cabus",
+  shortName: "Jayson Cabus",
+  role: "Computer Engineer & Full-Stack Developer",
+  tagline: "Computer Engineering student at PUP specializing in full-stack web development, IoT hardware systems, and generative AI content creation.",
+  objective: "To obtain a position where I can apply my skills, continuously learn, gain valuable work experience, and make a positive contribution to the organization's goals.",
+  location: "Valenzuela City, Metro Manila, Philippines",
+  address: "79 Ingreso Compound, Karuhatan Road, Brgy. Karuhatan, Valenzuela City",
+  phone: "092 6265 0382",
+  email: "jaycabus28@gmail.com",
+  github: "https://github.com/JZone27",
+  linkedin: "https://linkedin.com",
+  stats: [
+    { label: "Degree Path", value: "BSCpE" },
+    { label: "University", value: "PUP" },
+    { label: "Core Projects", value: "6+" },
+    { label: "Certifications", value: "5+" }
+  ]
+};
+
+export const education: EducationItem[] = [
+  {
+    institution: "Polytechnic University of the Philippines (PUP)",
+    degree: "Bachelor of Science in Computer Engineering (BSCpE)",
+    period: "2023 — Present",
+    location: "Sta. Mesa, Manila, Philippines"
+  }
+];
+
+export const certifications: CertificationItem[] = [
+  {
+    id: "cert-1",
+    title: "Workshop 1: Human-Centric AI and Regional Problem Solving",
+    issuer: "ASEAN AI Hackathon 2026",
+    date: "May 2026",
+    badge: "AI & Hackathon"
+  },
+  {
+    id: "cert-2",
+    title: "Data Science and Analytics",
+    issuer: "HP Life",
+    date: "April 2025",
+    badge: "Data & Analytics"
+  },
+  {
+    id: "cert-3",
+    title: "CCNA: Introduction to Networks",
+    issuer: "Cisco Networking Academy",
+    date: "February 2025",
+    badge: "Networking"
+  },
+  {
+    id: "cert-4",
+    title: "Python, SQL, & Web Development Certifications",
+    issuer: "SoloLearn",
+    date: "2024 — 2025",
+    badge: "Software Engineering"
+  }
+];
+
+export const experiences: ExperienceItem[] = [
+  {
+    id: "exp-1",
+    role: "Full-Stack Developer Intern",
+    company: "TembongPC E-Commerce Directory",
+    location: "Metro Manila, Philippines",
+    period: "July 2025 — September 2025",
+    type: "Internship",
+    description: [
+      "Communicated directly with the client to translate operational business requirements into a functional web interface.",
+      "Architected and developed a responsive web-based e-commerce directory platform using VanillaJS and Firebase database integration.",
+      "Built a product catalog management system and an advanced custom PC builder featuring component compatibility filtering and automated build summaries."
+    ],
+    skills: ["JavaScript", "Firebase", "HTML5/CSS3", "Database Integration", "Product Catalog", "Client Communication"],
+    featured: true
+  },
+  {
+    id: "exp-2",
+    role: "Web3 Community & Research Specialist",
+    company: "Syzygy Spacewalkers",
+    location: "Remote",
+    period: "2018 — 2021",
+    type: "Contract",
+    description: [
+      "Administered Discord operations to maintain server security, moderate communities, and facilitate structured knowledge sharing.",
+      "Analyzed cryptocurrency project whitepapers, tokenomics models, and underlying distributed protocols to evaluate project viability."
+    ],
+    skills: ["Community Management", "Research & Analysis", "Discord Ops", "Tokenomics", "Technical Writing"]
+  },
+  {
+    id: "exp-3",
+    role: "Computer Technician (Part-time)",
+    company: "Quatro Avenue Computer Shop",
+    location: "Valenzuela City, Philippines",
+    period: "2013 — 2016",
+    type: "Part-time",
+    description: [
+      "Provided direct technical assistance and customer service to active users, swiftly resolving hardware and software conflicts.",
+      "Diagnosed and repaired complex hardware and software issues for desktop and laptop computers.",
+      "Handled custom PC building, OS installation, driver deployment, and maintained Local Area Network (LAN) infrastructure stability."
+    ],
+    skills: ["Hardware Diagnostics", "PC Assembly", "LAN Networking", "OS Deployment", "Customer Support"]
+  }
+];
+
+export const projects: ProjectItem[] = [
+  {
+    id: "proj-1",
+    title: "SurgeAlert - Flood Monitoring & Alert System",
+    tagline: "IoT-based real-time flood telemetry & automated early warning system",
+    description: "An integrated hardware and software IoT solution built on Raspberry Pi and ultrasonic/water level sensors to capture live water levels, trigger automated localized alarms, and send real-time community alerts.",
+    category: "IoT & Embedded",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80",
+    technologies: ["Raspberry Pi", "Python", "C++", "Sensors", "IoT", "Telemetry", "Leaflet Maps"],
+    metrics: "Sub-Second Alert Latency",
+    githubUrl: "https://github.com/JZone27",
+    liveUrl: "https://surgealert-web.pages.dev/",
+    featured: true,
+    highlights: [
+      "Engineered hardware sensor interface with Raspberry Pi GPIO for continuous water level telemetry",
+      "Configured automated notification dispatch for emergency hazard threshold triggers",
+      "Deployed responsive web telemetry interface with live map tracking on Cloudflare Pages"
+    ]
+  },
+  {
+    id: "proj-2",
+    title: "TembongPC E-Commerce & PC Builder",
+    tagline: "Web-based e-commerce directory platform with intelligent compatibility checker",
+    description: "A comprehensive web application for computer parts and accessories store featuring product catalog management, interactive custom PC builder with socket/socket power compatibility checks, Firebase real-time database, and dynamic build summary export.",
+    category: "Full Stack",
+    image: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1000&q=80",
+    technologies: ["JavaScript", "Firebase", "HTML5", "CSS3", "E-Commerce", "PC Builder Algorithm"],
+    metrics: "Complete Component Compatibility Matrix",
+    githubUrl: "https://github.com/JZone27",
+    liveUrl: "https://github.com/JZone27",
+    featured: true,
+    highlights: [
+      "Custom PC configuration algorithm verifying CPU sockets, RAM DDR types, and PSU wattage",
+      "Firebase Cloud Firestore integration for real-time stock and product catalog updates",
+      "Instant printable/exportable build specification summary for customers"
+    ]
+  },
+  {
+    id: "proj-3",
+    title: "Interactive PUP Campus Map Interaction",
+    tagline: "Interactive coordinate map and multimedia landmark discovery tool",
+    description: "A responsive spatial map application for Polytechnic University of the Philippines (PUP) with interactive hover coordinate nodes, landmark photos, historical archives, and dynamic info overlays.",
+    category: "Web Apps",
+    image: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1000&q=80",
+    technologies: ["JavaScript", "HTML5 ImageMap", "CSS3", "UI/UX"],
+    metrics: "12+ Campus Landmark Points",
+    githubUrl: "https://github.com/JZone27/Portfolio",
+    featured: false,
+    highlights: [
+      "Interactive image map with dynamic SVG coordinate hover and modal inspect cards",
+      "Optimized lightweight VanillaJS architecture for instant load time",
+      "Detailed architectural descriptions of Mabini Shrine, Pylon, Mural, and Open Courts"
+    ]
+  },
+  {
+    id: "proj-4",
+    title: "AI-Powered Technical Support Assistant",
+    tagline: "Prompt-engineered diagnostics assistant for hardware and system triage",
+    description: "An AI diagnostics assistant designed to analyze user hardware symptoms (BSOD codes, POST beeps, network packet drops) and output step-by-step diagnostic workflows.",
+    category: "AI & Automation",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80",
+    technologies: ["Python", "Prompt Engineering", "OpenAI / Gemini API", "LLM Chains"],
+    metrics: "Structured Decision Trees",
+    githubUrl: "https://github.com/JZone27",
+    featured: false,
+    highlights: [
+      "System prompt architecture with few-shot hardware fault classification",
+      "Automated component triage and recommendation protocols",
+      "Structured output format ready for technician ticketing systems"
+    ]
+  }
+];
+
+export const aiContentShowcase: AIContentItem[] = [
+  {
+    id: "ai-video-1",
+    title: "8-Rib Automatic Umbrella — AI Product Showcase",
+    category: "Multimodal & Video",
+    tool: "AI Video & Dynamic Captions",
+    description: "High-energy commercial showcasing an 8-rib automatic windproof umbrella with synchronized animated captions, kinetic pacing, and product feature callouts.",
+    videoUrl: "/videos/8 rib umbrella - with captions.mp4",
+    prompt: "cinematic commercial product demonstration of an 8-rib heavy duty reinforced windproof umbrella, rapid deployment mechanism, water-repellent nanotech fabric beads, dynamic camera dolly zoom, sleek studio lighting, animated captions --ar 9:16",
+    aspectRatio: "9:16 (Vertical)",
+    tags: ["AI Video", "Product Ad", "Dynamic Captions", "E-Commerce", "Short-Form"],
+    parameters: {
+      model: "Generative Video & Audio Pipeline"
+    }
+  },
+  {
+    id: "ai-video-2",
+    title: "Simplee Nutritional Wellness — AI UGC Commercial",
+    category: "Multimodal & Video",
+    tool: "AI UGC & Video Ad Pipeline",
+    description: "Direct-response UGC video advertisement for Simplee nutritional supplements, engineered with hook-focused narrative pacing, kinetic subtitles, and conversion triggers.",
+    videoUrl: "/videos/Simplee with captions.mp4",
+    prompt: "lifestyle UGC product review video showing Simplee supplement bottle, warm natural morning lighting, clean aesthetic kitchen background, vibrant product close-ups, energetic transitions, animated subtitle highlights",
+    aspectRatio: "9:16 (Vertical)",
+    tags: ["UGC Ad", "Health & Wellness", "AI Captions", "Conversion Hook", "Reels/TikTok"],
+    parameters: {
+      model: "AI Video Synthesis & Editing Engine"
+    }
+  },
+  {
+    id: "ai-video-3",
+    title: "Soursop Natural Health Drink — Commercial Spot",
+    category: "Multimodal & Video",
+    tool: "Generative Video & Creative Direction",
+    description: "Cinematic commercial spot for organic Soursop herbal beverage, highlighting natural ingredients, rich tropical textures, and clean wellness aesthetics.",
+    videoUrl: "/videos/Soursop final.mp4",
+    prompt: "commercial beverage advertisement for natural pure Soursop herbal extract, lush tropical orchard background with fresh dew-covered fruits, refreshing condensation on bottle, slow-motion golden hour sunlight, 8k commercial grade",
+    aspectRatio: "9:16 (Vertical)",
+    tags: ["Commercial Spot", "Beverage Ad", "Generative Video", "Cinematic", "Branding"],
+    parameters: {
+      model: "Generative Cinematic Video Suite"
+    }
+  },
+  {
+    id: "ai-img-1",
+    title: "Cybernetic Quantum Core - Hardware Concept Art",
+    category: "Image Generation",
+    tool: "Midjourney v6.1",
+    description: "Hyper-detailed hardware visualization of an illuminated quantum computing motherboard processor with micro-cooling conduits.",
+    prompt: "/imagine prompt: cinematic photography of a next-generation quantum microprocessor unit, glowing cyan circuit traces, intricate copper heat pipes, liquid nitrogen cooling vapor, macro close-up, studio rim lighting, 8k resolution, photorealistic, shot on Hasselblad H6D --ar 16:9 --style raw",
+    aspectRatio: "16:9",
+    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1200&q=80",
+    tags: ["Midjourney v6", "Hardware Concept", "Octane Render", "Quantum Tech"],
+    parameters: {
+      model: "Midjourney v6.1",
+      cfgScale: 7.0,
+      steps: 50
+    }
+  },
+  {
+    id: "ai-prompt-1",
+    title: "Hardware Triage & POST Code Diagnostic Chain",
+    category: "Prompt Engineering",
+    tool: "Gemini 1.5 Pro / Claude 3.5",
+    description: "Production prompt template for automated hardware troubleshooting, BIOS beep code analysis, and component isolation matrix.",
+    prompt: `You are HARDWARE-TRIAGE-AI: a Lead Computer Engineer and Hardware Diagnostic Specialist.
+Input: Analyze symptom telemetry, motherboard POST status LEDs, and OS event viewer error codes.
+Output format:
+1. Primary Root Cause Hypothesis (Confidence Score: 0-100%)
+2. Component Isolation Steps (RAM, PSU, GPU, VRM, Motherboard)
+3. Non-Destructive Verification Benchmark Procedures.`,
+    tags: ["Prompt Engineering", "System Prompts", "Hardware Triage", "Diagnostics"],
+    outputSample: "✓ Root Cause: 85% probability VRM thermal throttling under continuous load\n✓ Diagnostic Plan: Reseat 24-pin ATX, isolate DIMM slots 2 & 4 with MemTest86, monitor HWInfo rail voltage stability.",
+    parameters: {
+      model: "Gemini 1.5 Pro",
+      temperature: 0.2
+    }
+  },
+  {
+    id: "ai-copy-1",
+    title: "IoT Flood Early-Warning Public Broadcast Generator",
+    category: "AI Copywriting",
+    tool: "GPT-4o",
+    description: "Automated emergency alert copy generator transforming raw water-level sensor telemetry into clear, multi-lingual community advisory notices.",
+    prompt: "Generate an urgent, calm, and actionable disaster preparedness advisory for Barangay Karuhatan based on a flood alert sensor reading 1.8 meters above baseline. Include clear evacuation directions and hotline details in Tagalog and English.",
+    tags: ["AI Copywriting", "Public Safety", "SurgeAlert", "Community Advisory"],
+    outputSample: "⚠️ ADVISORY: SurgeAlert Sensor #04 (Karuhatan River) has recorded water levels at 1.8m (Warning Level 2).\n\nResidents in low-lying sectors are advised to prepare emergency kits and monitor official Barangay alerts.\n\nEmergency Hotline: 092 6265 0382",
+    parameters: {
+      model: "GPT-4o",
+      temperature: 0.5
+    }
+  }
+];
+
+export const skillCategories: SkillCategory[] = [
+  {
+    name: "Technical & Engineering",
+    icon: "Cpu",
+    skills: [
+      { name: "Python & Automation", level: 90, highlight: true },
+      { name: "JavaScript / TypeScript", level: 88, highlight: true },
+      { name: "HTML5 & Modern CSS3", level: 92, highlight: true },
+      { name: "SQL & Firebase Database", level: 85, highlight: true },
+      { name: "C++ & Firmware Basics", level: 80 },
+      { name: "IoT & Hardware Troubleshooting", level: 92, highlight: true }
+    ]
+  },
+  {
+    name: "AI & Generative Content",
+    icon: "Sparkles",
+    skills: [
+      { name: "AI Video Creation & Dynamic Captions", level: 94, highlight: true },
+      { name: "Prompt Engineering (LLMs)", level: 92, highlight: true },
+      { name: "Gemini & OpenAI API Integration", level: 88, highlight: true },
+      { name: "Midjourney & Concept Art", level: 86 },
+      { name: "Data Science & Analytics (HP Life)", level: 84 },
+      { name: "E-Commerce UGC & Ad Scripting", level: 90, highlight: true }
+    ]
+  },
+  {
+    name: "Office Productivity & Systems",
+    icon: "Layout",
+    skills: [
+      { name: "Microsoft Word (Documentation)", level: 95 },
+      { name: "Microsoft Excel (Data Logs & Formulas)", level: 90, highlight: true },
+      { name: "Microsoft PowerPoint (Presentations)", level: 92 },
+      { name: "Cisco Networking & LAN Config", level: 85 },
+      { name: "Git & Version Control", level: 86 }
+    ]
+  },
+  {
+    name: "Communication & Collaboration",
+    icon: "Palette",
+    skills: [
+      { name: "Client Relations & Communication", level: 94, highlight: true },
+      { name: "Technical Concept Translation", level: 92, highlight: true },
+      { name: "Team Collaboration & Adaptability", level: 95, highlight: true },
+      { name: "Customer Service & User Support", level: 92 }
+    ]
+  }
+];
+
+export const promptSimulatorPresets = [
+  {
+    id: "preset-1",
+    name: "AI Video Script & Ad Hook",
+    task: "Generate high-converting UGC video hooks and automated caption storyboards",
+    defaultPrompt: "Write a 30-second TikTok / Reels script for an 8-Rib Windproof Umbrella, featuring an attention-grabbing hook in the first 3 seconds and dynamic kinetic subtitles.",
+    model: "GPT-4o",
+    temperature: 0.7,
+    sampleOutput: `📱 **[0:00 - 0:03] THE HOOK:**
+*(Visual: Rain pouring, cheap umbrella flips inside out)*
+Audio: "Stop buying umbrellas that betray you the second it actually rains! ☔❌"
+[CAPTION: "STOP WASTING MONEY 🛑"]
+
+🎬 **[0:03 - 0:15] THE BREAKTHROUGH:**
+*(Visual: One-click instant open of 8-Rib Reinforced Umbrella, water beads bouncing off nanotech fabric)*
+Audio: "This is the 8-Rib Automatic Windproof Shield. Built with aircraft-grade fiberglass ribs that flex instead of snapping."
+[CAPTION: "AIRCRAFT-GRADE FIBERGLASS 🛡️"]
+
+🔥 **[0:15 - 0:30] CTA & PROOF:**
+Audio: "One button to open, one button to close, and fits right in your bag. Tap below to grab yours before rainy season!"
+[CAPTION: "TAP LINK FOR 40% OFF 👇"]`
+  },
+  {
+    id: "preset-2",
+    name: "Hardware Diagnostics Agent",
+    task: "Analyze hardware error symptoms and generate structured diagnostic checklist",
+    defaultPrompt: "A customer PC is experiencing random blue screens (Kernel Data Inpage Error) under heavy gaming and disk writes. Generate a diagnostic protocol for testing RAM, NVMe SSD, and motherboard chipset.",
+    model: "Gemini 1.5 Pro",
+    temperature: 0.2,
+    sampleOutput: `### Triage Protocol: Kernel Data Inpage Error
+**Potential Cause:** Unstable NVMe controller PCIe link, failing NAND block, or corrupted pagefile memory.
+
+1. **Storage Integrity Test:**
+   - Execute \`chkdsk /f /r\` and check CrystalDiskInfo SMART attributes for 0E (Media Errors) and 03 (Available Spare).
+2. **Memory Diagnostics:**
+   - Run Windows Memory Diagnostic or boot into MemTest86 for 4 passes.
+3. **Hardware Reseat:**
+   - Reseat M.2 NVMe in Primary PCIe Gen4 slot and clean gold contacts with isopropyl alcohol.`
+  },
+  {
+    id: "preset-3",
+    name: "IoT Sensor Alert Prompt",
+    task: "Generate emergency public warning message based on live flood telemetry",
+    defaultPrompt: "Create an urgent flood telemetry bulletin for Valenzuela City residents based on water level sensor reading reaching Warning Threshold 2 at 1.85m.",
+    model: "Claude 3.5 Sonnet",
+    temperature: 0.4,
+    sampleOutput: `🚨 **SURGEALERT BULLETIN #03 — VALENZUELA CITY**
+**Status:** Warning Level 2 (Water Level: 1.85m)
+**Target Location:** Low-lying zones along Karuhatan / Tullahan riverbank.
+
+**Key Directives:**
+1. Secure household electrical switches and elevate valuables.
+2. Evacuation staging center open at Karuhatan High School Gymnasium.
+3. For immediate assistance, contact Disaster Risk Reduction Hotline: 092 6265 0382.`
+  }
+];
