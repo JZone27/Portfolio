@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Briefcase, Calendar, MapPin, CheckCircle2, Sparkles, Building2 } from 'lucide-react';
+import { Briefcase, Calendar, MapPin, CheckCircle2, Sparkles, Building2, ExternalLink } from 'lucide-react';
 import { experiences } from '../data/portfolioData';
 
 export const Experience: React.FC = () => {
   const [selectedExpId, setSelectedExpId] = useState<string>(experiences[0]?.id || '');
+  const [hoveredExpId, setHoveredExpId] = useState<string | null>(null);
 
   return (
     <section id="experience" className="py-24 relative overflow-hidden bg-zinc-100/40 dark:bg-[#161619]/40">
@@ -21,7 +22,7 @@ export const Experience: React.FC = () => {
             Professional Experience & Milestones
           </h2>
           <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 font-normal">
-            A track record of shipping web platforms, managing technical client relations, and building IoT systems.
+            A track record of shipping web platforms, managing technical communities, and building IoT systems.
           </p>
         </div>
 
@@ -34,6 +35,7 @@ export const Experience: React.FC = () => {
             {experiences.map((exp, index) => {
               const isEven = index % 2 === 0;
               const isSelected = selectedExpId === exp.id;
+              const isHovered = hoveredExpId === exp.id;
 
               return (
                 <div
@@ -51,8 +53,10 @@ export const Experience: React.FC = () => {
                   <div className="w-full sm:w-[calc(50%-2rem)]">
                     <div
                       onClick={() => setSelectedExpId(exp.id)}
-                      className={`p-6 sm:p-7 rounded-2xl glass-card transition-all duration-300 cursor-pointer ${
-                        isSelected
+                      onMouseEnter={() => setHoveredExpId(exp.id)}
+                      onMouseLeave={() => setHoveredExpId(null)}
+                      className={`relative p-6 sm:p-7 rounded-2xl glass-card transition-all duration-300 cursor-pointer overflow-hidden ${
+                        isSelected || isHovered
                           ? 'border-emerald-500/80 shadow-lg shadow-emerald-500/10 ring-1 ring-emerald-500/30'
                           : 'hover:border-zinc-300 dark:hover:border-zinc-700 shadow-xs'
                       }`}
@@ -68,19 +72,61 @@ export const Experience: React.FC = () => {
                         </span>
                       </div>
 
-                      {/* Job Title & Company */}
+                      {/* Job Title */}
                       <h3 className="text-xl font-bold text-zinc-900 dark:text-white group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors mb-1">
                         {exp.role}
                       </h3>
-                      <div className="flex items-center gap-2 text-sm font-medium text-zinc-600 dark:text-zinc-300 mb-4">
-                        <Building2 className="w-4 h-4 text-emerald-500" />
-                        <span>{exp.company}</span>
+
+                      {/* Company & Link */}
+                      <div className="flex items-center gap-2 text-sm font-medium text-zinc-600 dark:text-zinc-300 mb-4 flex-wrap">
+                        <Building2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                        {exp.companyUrl ? (
+                          <a
+                            href={exp.companyUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="inline-flex items-center gap-1 font-bold text-emerald-600 dark:text-emerald-400 hover:underline"
+                          >
+                            <span>{exp.company}</span>
+                            <ExternalLink className="w-3.5 h-3.5" />
+                          </a>
+                        ) : (
+                          <span className="font-semibold">{exp.company}</span>
+                        )}
                         <span className="text-zinc-400">•</span>
                         <span className="flex items-center gap-1 text-zinc-500 dark:text-zinc-400 text-xs">
                           <MapPin className="w-3 h-3" />
                           {exp.location}
                         </span>
                       </div>
+
+                      {/* Interactive Media / Guild Preview on Card */}
+                      {exp.image && (
+                        <div
+                          className={`mb-5 rounded-2xl overflow-hidden border border-emerald-500/30 transition-all duration-500 bg-zinc-950 ${
+                            isHovered
+                              ? 'max-h-56 opacity-100 scale-100 shadow-md shadow-emerald-500/20'
+                              : 'max-h-24 opacity-85 scale-[0.98]'
+                          }`}
+                        >
+                          <div className="relative aspect-video sm:aspect-[2/1] overflow-hidden">
+                            <img
+                              src={exp.image}
+                              alt={exp.company}
+                              className={`w-full h-full object-cover transition-transform duration-700 ${
+                                isHovered ? 'scale-110' : 'scale-100'
+                              }`}
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent flex items-end p-3">
+                              <span className="text-xs font-bold text-white flex items-center gap-1 bg-zinc-950/80 px-2.5 py-1 rounded-lg backdrop-blur-md border border-white/10">
+                                <span>{exp.company}</span>
+                                <ExternalLink className="w-3 h-3 text-emerald-400" />
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      )}
 
                       {/* Bullet Highlights */}
                       <ul className="space-y-2.5 mb-5 text-sm text-zinc-600 dark:text-zinc-300">
@@ -97,7 +143,7 @@ export const Experience: React.FC = () => {
                         {exp.skills.map((skill) => (
                           <span
                             key={skill}
-                            className="px-2.5 py-1 text-xs font-medium rounded-md bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300"
+                            className="px-2.5 py-1 text-xs font-medium rounded-md bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border border-zinc-200/50 dark:border-zinc-700/50"
                           >
                             {skill}
                           </span>

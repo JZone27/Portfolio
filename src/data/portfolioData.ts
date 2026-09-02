@@ -2,6 +2,8 @@ export interface ExperienceItem {
   id: string;
   role: string;
   company: string;
+  companyUrl?: string;
+  image?: string;
   location: string;
   period: string;
   type: 'Full-time' | 'Contract' | 'Freelance' | 'Internship' | 'Part-time';
@@ -146,7 +148,9 @@ export const experiences: ExperienceItem[] = [
   {
     id: "exp-2",
     role: "Web3 Community & Research Specialist",
-    company: "Syzygy Spacewalkers",
+    company: "Real Deal Guild",
+    companyUrl: "https://www.facebook.com/realdealguild",
+    image: "/images/realdeal_guild.png",
     location: "Remote",
     period: "2018 — 2021",
     type: "Contract",
@@ -179,7 +183,7 @@ export const projects: ProjectItem[] = [
     tagline: "IoT-based real-time flood telemetry & automated early warning system",
     description: "An integrated hardware and software IoT solution built on Raspberry Pi and ultrasonic/water level sensors to capture live water levels, trigger automated localized alarms, and send real-time community alerts.",
     category: "IoT & Embedded",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/surgealert_logo.png",
     technologies: ["Raspberry Pi", "Python", "C++", "Sensors", "IoT", "Telemetry", "Leaflet Maps"],
     metrics: "Sub-Second Alert Latency",
     githubUrl: "https://github.com/JZone27",
@@ -228,19 +232,20 @@ export const projects: ProjectItem[] = [
   },
   {
     id: "proj-4",
-    title: "AI-Powered Technical Support Assistant",
-    tagline: "Prompt-engineered diagnostics assistant for hardware and system triage",
-    description: "An AI diagnostics assistant designed to analyze user hardware symptoms (BSOD codes, POST beeps, network packet drops) and output step-by-step diagnostic workflows.",
-    category: "AI & Automation",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80",
-    technologies: ["Python", "Prompt Engineering", "OpenAI / Gemini API", "LLM Chains"],
-    metrics: "Structured Decision Trees",
+    title: "Beyond The Edge — Multimedia Production",
+    tagline: "Multimedia production platform, video editing & creative portfolio showcase",
+    description: "A modern, high-performance multimedia production web application showcasing cinematic video creations, commercial editing projects, client showreels, and creative media services.",
+    category: "Web Apps",
+    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1000&q=80",
+    technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "Video Production", "Vercel"],
+    metrics: "Live on Vercel",
     githubUrl: "https://github.com/JZone27",
-    featured: false,
+    liveUrl: "https://beyond-the-edge.vercel.app/",
+    featured: true,
     highlights: [
-      "System prompt architecture with few-shot hardware fault classification",
-      "Automated component triage and recommendation protocols",
-      "Structured output format ready for technician ticketing systems"
+      "Engineered a responsive creative portfolio web application for multimedia and commercial video productions",
+      "Integrated dynamic media galleries, immersive visual layouts, and fast asset streaming",
+      "Deployed with modern continuous integration and global edge delivery on Vercel"
     ]
   }
 ];
@@ -286,55 +291,6 @@ export const aiContentShowcase: AIContentItem[] = [
     tags: ["Commercial Spot", "Beverage Ad", "Generative Video", "Cinematic", "Branding"],
     parameters: {
       model: "Generative Cinematic Video Suite"
-    }
-  },
-  {
-    id: "ai-img-1",
-    title: "Cybernetic Quantum Core - Hardware Concept Art",
-    category: "Image Generation",
-    tool: "Midjourney v6.1",
-    description: "Hyper-detailed hardware visualization of an illuminated quantum computing motherboard processor with micro-cooling conduits.",
-    prompt: "/imagine prompt: cinematic photography of a next-generation quantum microprocessor unit, glowing cyan circuit traces, intricate copper heat pipes, liquid nitrogen cooling vapor, macro close-up, studio rim lighting, 8k resolution, photorealistic, shot on Hasselblad H6D --ar 16:9 --style raw",
-    aspectRatio: "16:9",
-    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1200&q=80",
-    tags: ["Midjourney v6", "Hardware Concept", "Octane Render", "Quantum Tech"],
-    parameters: {
-      model: "Midjourney v6.1",
-      cfgScale: 7.0,
-      steps: 50
-    }
-  },
-  {
-    id: "ai-prompt-1",
-    title: "Hardware Triage & POST Code Diagnostic Chain",
-    category: "Prompt Engineering",
-    tool: "Gemini 1.5 Pro / Claude 3.5",
-    description: "Production prompt template for automated hardware troubleshooting, BIOS beep code analysis, and component isolation matrix.",
-    prompt: `You are HARDWARE-TRIAGE-AI: a Lead Computer Engineer and Hardware Diagnostic Specialist.
-Input: Analyze symptom telemetry, motherboard POST status LEDs, and OS event viewer error codes.
-Output format:
-1. Primary Root Cause Hypothesis (Confidence Score: 0-100%)
-2. Component Isolation Steps (RAM, PSU, GPU, VRM, Motherboard)
-3. Non-Destructive Verification Benchmark Procedures.`,
-    tags: ["Prompt Engineering", "System Prompts", "Hardware Triage", "Diagnostics"],
-    outputSample: "✓ Root Cause: 85% probability VRM thermal throttling under continuous load\n✓ Diagnostic Plan: Reseat 24-pin ATX, isolate DIMM slots 2 & 4 with MemTest86, monitor HWInfo rail voltage stability.",
-    parameters: {
-      model: "Gemini 1.5 Pro",
-      temperature: 0.2
-    }
-  },
-  {
-    id: "ai-copy-1",
-    title: "IoT Flood Early-Warning Public Broadcast Generator",
-    category: "AI Copywriting",
-    tool: "GPT-4o",
-    description: "Automated emergency alert copy generator transforming raw water-level sensor telemetry into clear, multi-lingual community advisory notices.",
-    prompt: "Generate an urgent, calm, and actionable disaster preparedness advisory for Barangay Karuhatan based on a flood alert sensor reading 1.8 meters above baseline. Include clear evacuation directions and hotline details in Tagalog and English.",
-    tags: ["AI Copywriting", "Public Safety", "SurgeAlert", "Community Advisory"],
-    outputSample: "⚠️ ADVISORY: SurgeAlert Sensor #04 (Karuhatan River) has recorded water levels at 1.8m (Warning Level 2).\n\nResidents in low-lying sectors are advised to prepare emergency kits and monitor official Barangay alerts.\n\nEmergency Hotline: 092 6265 0382",
-    parameters: {
-      model: "GPT-4o",
-      temperature: 0.5
     }
   }
 ];

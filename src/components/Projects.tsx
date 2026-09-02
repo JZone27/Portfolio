@@ -57,14 +57,14 @@ export const Projects: React.FC = () => {
             >
               <div>
                 {/* Thumbnail Image */}
-                <div className="relative aspect-video overflow-hidden bg-zinc-950">
+                <div className="relative aspect-video overflow-hidden bg-zinc-950 flex items-center justify-center">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    className={`w-full h-full ${project.image.includes('logo') ? 'object-contain p-6 bg-[#070c16]' : 'object-cover'} object-center group-hover:scale-105 transition-transform duration-500`}
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent opacity-80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-transparent to-transparent opacity-80 pointer-events-none" />
 
                   {/* Category Badge & Metrics */}
                   <div className="absolute top-4 left-4 flex flex-wrap gap-2">
@@ -173,11 +173,11 @@ export const Projects: React.FC = () => {
               </div>
 
               {/* Modal Image */}
-              <div className="rounded-2xl overflow-hidden mb-6 aspect-video bg-zinc-900">
+              <div className="rounded-2xl overflow-hidden mb-6 aspect-video bg-zinc-950 flex items-center justify-center">
                 <img
                   src={selectedProject.image}
                   alt={selectedProject.title}
-                  className="w-full h-full object-cover"
+                  className={`w-full h-full ${selectedProject.image.includes('logo') ? 'object-contain p-8 bg-[#070c16]' : 'object-cover'}`}
                 />
               </div>
 

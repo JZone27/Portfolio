@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -24,14 +26,14 @@
 
 /* Glassmorphism helpers for Warm Charcoal & Emerald */
 .glass {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(228, 228, 231, 0.6);
 }
 
 .dark .glass {
-  background: rgba(22, 22, 25, 0.8);
+  background: rgba(22, 22, 25, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -45,7 +47,7 @@
 }
 
 .dark .glass-card {
-  background: rgba(24, 24, 27, 0.7);
+  background: rgba(24, 24, 27, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(63, 63, 70, 0.4);
