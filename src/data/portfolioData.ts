@@ -215,19 +215,20 @@ export const projects: ProjectItem[] = [
   },
   {
     id: "proj-3",
-    title: "Interactive PUP Campus Map Interaction",
-    tagline: "Interactive coordinate map and multimedia landmark discovery tool",
-    description: "A responsive spatial map application for Polytechnic University of the Philippines (PUP) with interactive hover coordinate nodes, landmark photos, historical archives, and dynamic info overlays.",
+    title: "DUEL — The Tactical Card Game",
+    tagline: "Strategic turn-based card combat web game with AI tactician & online rooms",
+    description: "A strategic card combat game remastered from Python to modern web. Features single player vs AI tactician, real-time online multiplayer rooms, 1v1 local pass-and-play, tactical deck calculations, Web Audio sound synthesis, particle ambient VFX, and match state persistence.",
     category: "Web Apps",
-    image: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1000&q=80",
-    technologies: ["JavaScript", "HTML5 ImageMap", "CSS3", "UI/UX"],
-    metrics: "12+ Campus Landmark Points",
-    githubUrl: "https://github.com/JZone27/Portfolio",
-    featured: false,
+    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1000&q=80",
+    technologies: ["JavaScript", "HTML5 Canvas", "Web Audio API", "CSS3 Glassmorphism", "Multiplayer Rooms", "Vercel"],
+    metrics: "AI & Online Multiplayer",
+    githubUrl: "https://github.com/JZone27/DUEL-CARD-GAME",
+    liveUrl: "https://duel-card-game.vercel.app/",
+    featured: true,
     highlights: [
-      "Interactive image map with dynamic SVG coordinate hover and modal inspect cards",
-      "Optimized lightweight VanillaJS architecture for instant load time",
-      "Detailed architectural descriptions of Mabini Shrine, Pylon, Mural, and Open Courts"
+      "Engineered Single Player mode featuring an automated AI decision-making tactician engine",
+      "Built real-time online multiplayer room lobbies and local 1v1 Pass & Play system",
+      "Implemented procedural Web Audio sound synthesis, dynamic canvas particles, and local storage game saving"
     ]
   },
   {
