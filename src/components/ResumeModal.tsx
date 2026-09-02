@@ -55,15 +55,15 @@ Workforce Forecasting and Capacity Planning Analyst – Alorica Teleservices Inc
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-gray-950/80 backdrop-blur-md animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-zinc-950/80 backdrop-blur-md animate-fadeIn">
       {/* Container */}
       <div
-        className="relative w-full max-w-4xl bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-800 max-h-[92vh] flex flex-col overflow-hidden"
+        className="relative w-full max-w-4xl bg-white dark:bg-[#161619] text-zinc-900 dark:text-zinc-100 rounded-3xl shadow-2xl border border-zinc-200 dark:border-zinc-800 max-h-[92vh] flex flex-col overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Control Bar */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200 dark:border-gray-800 bg-gray-50/80 dark:bg-gray-950/80 shrink-0">
-          <div className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-bold text-sm">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/80 dark:bg-[#0E0E10]/80 shrink-0">
+          <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold text-sm">
             <FileText className="w-5 h-5" />
             <span>Curriculum Vitae / Resume</span>
           </div>
@@ -71,7 +71,7 @@ Workforce Forecasting and Capacity Planning Analyst – Alorica Teleservices Inc
           <div className="flex items-center gap-2">
             <button
               onClick={handleCopyText}
-              className="px-3 py-1.5 rounded-xl text-xs font-semibold bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 transition flex items-center gap-1.5 cursor-pointer"
+              className="px-3 py-1.5 rounded-xl text-xs font-semibold bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-700 transition flex items-center gap-1.5 cursor-pointer"
             >
               {copied ? (
                 <>
@@ -88,7 +88,7 @@ Workforce Forecasting and Capacity Planning Analyst – Alorica Teleservices Inc
 
             <button
               onClick={handlePrint}
-              className="px-4 py-1.5 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white transition flex items-center gap-1.5 shadow-sm cursor-pointer"
+              className="px-4 py-1.5 rounded-xl text-xs font-bold bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 text-zinc-950 transition flex items-center gap-1.5 shadow-sm cursor-pointer"
             >
               <Printer className="w-3.5 h-3.5" />
               <span>Print / Save PDF</span>
@@ -96,7 +96,7 @@ Workforce Forecasting and Capacity Planning Analyst – Alorica Teleservices Inc
 
             <button
               onClick={onClose}
-              className="p-1.5 rounded-full text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-800 transition cursor-pointer"
+              className="p-1.5 rounded-full text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-200 dark:hover:bg-zinc-800 transition cursor-pointer"
               aria-label="Close"
             >
               <X className="w-5 h-5" />
@@ -105,16 +105,16 @@ Workforce Forecasting and Capacity Planning Analyst – Alorica Teleservices Inc
         </div>
 
         {/* Scrollable Printable Resume Sheet */}
-        <div className="flex-1 overflow-y-auto p-6 sm:p-10 space-y-8 bg-white dark:bg-gray-900 print:p-0 print:bg-white print:text-black">
+        <div className="flex-1 overflow-y-auto p-6 sm:p-10 space-y-8 bg-white dark:bg-[#161619] print:p-0 print:bg-white print:text-black">
           {/* Header */}
-          <div className="text-center pb-6 border-b-2 border-gray-900 dark:border-gray-100">
-            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white uppercase mb-1">
+          <div className="text-center pb-6 border-b-2 border-zinc-900 dark:border-zinc-100">
+            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-white uppercase mb-1">
               {personalInfo.name}
             </h1>
-            <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mb-2">
+            <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 mb-2">
               {personalInfo.address}
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-gray-700 dark:text-gray-300">
+            <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-zinc-700 dark:text-zinc-300">
               <span className="flex items-center gap-1">
                 <strong>Mobile:</strong> {personalInfo.phone}
               </span>
@@ -127,20 +127,20 @@ Workforce Forecasting and Capacity Planning Analyst – Alorica Teleservices Inc
 
           {/* Job Objectives */}
           <div>
-            <h2 className="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white mb-2 pb-1 border-b border-gray-300 dark:border-gray-700">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-2 pb-1 border-b border-zinc-300 dark:border-zinc-700">
               Job Objectives
             </h2>
-            <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
               {personalInfo.objective}
             </p>
           </div>
 
           {/* Skills */}
           <div>
-            <h2 className="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white mb-3 pb-1 border-b border-gray-300 dark:border-gray-700">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-3 pb-1 border-b border-zinc-300 dark:border-zinc-700">
               Skills
             </h2>
-            <ul className="space-y-2 text-xs sm:text-sm text-gray-700 dark:text-gray-300">
+            <ul className="space-y-2 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300">
               <li>
                 <strong>Customer Service & Communication:</strong> Skilled at building rapport, managing client relations, and communicating technical concepts clearly to diverse users.
               </li>
@@ -158,20 +158,20 @@ Workforce Forecasting and Capacity Planning Analyst – Alorica Teleservices Inc
 
           {/* Experiences */}
           <div>
-            <h2 className="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white mb-4 pb-1 border-b border-gray-300 dark:border-gray-700">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-4 pb-1 border-b border-zinc-300 dark:border-zinc-700">
               Experiences
             </h2>
             <div className="space-y-5">
               {experiences.map((exp) => (
                 <div key={exp.id}>
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs sm:text-sm mb-0.5">
-                    <span className="font-bold text-gray-900 dark:text-white">{exp.company}</span>
-                    <span className="font-medium text-gray-600 dark:text-gray-400">{exp.period}</span>
+                    <span className="font-bold text-zinc-900 dark:text-white">{exp.company}</span>
+                    <span className="font-medium text-zinc-600 dark:text-zinc-400">{exp.period}</span>
                   </div>
-                  <div className="italic text-xs text-gray-700 dark:text-gray-300 mb-2">
+                  <div className="italic text-xs text-zinc-700 dark:text-zinc-300 mb-2">
                     {exp.role}
                   </div>
-                  <ul className="list-disc list-inside space-y-1 text-xs sm:text-sm text-gray-700 dark:text-gray-300">
+                  <ul className="list-disc list-inside space-y-1 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300">
                     {exp.description.map((desc, idx) => (
                       <li key={idx} className="leading-relaxed">
                         <span>{desc}</span>
@@ -185,19 +185,19 @@ Workforce Forecasting and Capacity Planning Analyst – Alorica Teleservices Inc
 
           {/* Projects */}
           <div>
-            <h2 className="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white mb-4 pb-1 border-b border-gray-300 dark:border-gray-700">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-4 pb-1 border-b border-zinc-300 dark:border-zinc-700">
               Key Projects
             </h2>
             <div className="space-y-4">
               {projects.map((proj) => (
                 <div key={proj.id} className="text-xs sm:text-sm">
-                  <div className="font-bold text-gray-900 dark:text-white">
-                    {proj.title} <span className="font-normal italic text-gray-500">| {proj.category}</span>
+                  <div className="font-bold text-zinc-900 dark:text-white">
+                    {proj.title} <span className="font-normal italic text-zinc-500">| {proj.category}</span>
                   </div>
-                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-1">
+                  <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed mb-1">
                     {proj.description}
                   </p>
-                  <div className="flex flex-wrap gap-1 text-[11px] text-gray-600 dark:text-gray-400">
+                  <div className="flex flex-wrap gap-1 text-[11px] text-zinc-600 dark:text-zinc-400">
                     <strong>Stack:</strong> {proj.technologies.join(', ')}
                   </div>
                 </div>
@@ -207,16 +207,16 @@ Workforce Forecasting and Capacity Planning Analyst – Alorica Teleservices Inc
 
           {/* Education */}
           <div>
-            <h2 className="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white mb-3 pb-1 border-b border-gray-300 dark:border-gray-700">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-3 pb-1 border-b border-zinc-300 dark:border-zinc-700">
               Education
             </h2>
             {education.map((ed, idx) => (
               <div key={idx} className="flex flex-col sm:flex-row sm:items-center justify-between text-xs sm:text-sm">
                 <div>
-                  <div className="font-bold text-gray-900 dark:text-white">{ed.institution}</div>
-                  <div className="italic text-gray-700 dark:text-gray-300">{ed.degree}</div>
+                  <div className="font-bold text-zinc-900 dark:text-white">{ed.institution}</div>
+                  <div className="italic text-zinc-700 dark:text-zinc-300">{ed.degree}</div>
                 </div>
-                <div className="font-medium text-gray-600 dark:text-gray-400 mt-1 sm:mt-0">
+                <div className="font-medium text-zinc-600 dark:text-zinc-400 mt-1 sm:mt-0">
                   {ed.period}
                 </div>
               </div>
@@ -225,10 +225,10 @@ Workforce Forecasting and Capacity Planning Analyst – Alorica Teleservices Inc
 
           {/* Seminars & Certifications */}
           <div>
-            <h2 className="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white mb-3 pb-1 border-b border-gray-300 dark:border-gray-700">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-3 pb-1 border-b border-zinc-300 dark:border-zinc-700">
               Seminars Attended / Certifications Acquired
             </h2>
-            <ul className="list-disc list-inside space-y-1.5 text-xs sm:text-sm text-gray-700 dark:text-gray-300">
+            <ul className="list-disc list-inside space-y-1.5 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300">
               {certifications.map((cert) => (
                 <li key={cert.id}>
                   <strong>{cert.issuer} ({cert.date})</strong> – {cert.title}
@@ -239,13 +239,13 @@ Workforce Forecasting and Capacity Planning Analyst – Alorica Teleservices Inc
 
           {/* Character Reference */}
           <div className="pt-2">
-            <h2 className="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white mb-2 pb-1 border-b border-gray-300 dark:border-gray-700">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-900 dark:text-white mb-2 pb-1 border-b border-zinc-300 dark:border-zinc-700">
               Character Reference
             </h2>
-            <div className="text-xs sm:text-sm text-gray-700 dark:text-gray-300">
-              <div className="font-bold text-gray-900 dark:text-white">Joan R. Gaton</div>
+            <div className="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300">
+              <div className="font-bold text-zinc-900 dark:text-white">Joan R. Gaton</div>
               <div>Workforce Forecasting and Capacity Planning Analyst – Alorica Teleservices Inc.</div>
-              <div className="text-gray-600 dark:text-gray-400 mt-0.5">09953329514 | joangatoncb@yahoo.com</div>
+              <div className="text-zinc-600 dark:text-zinc-400 mt-0.5">09953329514 | joangatoncb@yahoo.com</div>
             </div>
           </div>
         </div>

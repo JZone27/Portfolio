@@ -15,7 +15,7 @@ export function App() {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('theme');
       if (saved) return saved === 'dark';
-      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+      return true; // Default to sleek dark mode
     }
     return true;
   });
@@ -32,7 +32,7 @@ export function App() {
   }, [isDark]);
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'dark bg-gray-950 text-gray-100' : 'bg-gray-50/70 text-gray-900'}`}>
+    <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'dark bg-[#121214] text-zinc-100 selection:bg-emerald-500 selection:text-zinc-950' : 'bg-zinc-50 text-zinc-900 selection:bg-emerald-500 selection:text-white'}`}>
       <Navbar
         isDark={isDark}
         setIsDark={setIsDark}
